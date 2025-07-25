@@ -10,9 +10,9 @@ Before getting started, you will need to set up 2 conda environments.
 
 Follow the instructions below for environment setup:
 
-First, f you have not already, use these instructions to set up miniconda: https://www.anaconda.com/docs/getting-started/miniconda/install#linux
+First, if you have not already, use these instructions to set up miniconda: https://www.anaconda.com/docs/getting-started/miniconda/install#linux
 
-1) ufs2arco - 
-    a) conda create -n ufs2arco python=3.12
-    b) conda activate ufs2arco
-    c) conda install -c conda-forge ufs2arco openmpi
+1) Create ufs2arco by running the following commands:
+    - conda create -n ufs2arco python=3.12
+    - conda activate ufs2arco
+    - conda install -c conda-forge ufs2arco openmpi
