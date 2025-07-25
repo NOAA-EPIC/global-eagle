@@ -5,7 +5,7 @@
 #SBATCH -e logs/training/preprocessing.err
 #SBATCH --account=enter_your_account
 #SBATCH --partition=u1-service
-#SBATCH --mem=64g
+#SBATCH --mem=32g
 #SBATCH -t 01:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=2

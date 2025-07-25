@@ -5,7 +5,7 @@
 #SBATCH -e logs/validation/preprocessing.err
 #SBATCH --account=enter_your_account
 #SBATCH --partition=u1-service
-#SBATCH --mem=64g
+#SBATCH --mem=32g
 #SBATCH -t 01:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=2
@@ -18,4 +18,4 @@ module load openmpi
 conda activate ufs2arco
 
 srun ufs2arco replay_validation.yaml --overwrite
-echo "Training dataset is complete"
+echo "Validation dataset is complete"

@@ -12,7 +12,16 @@ Follow the instructions below for environment setup:
 
 First, if you have not already, use these instructions to set up miniconda: https://www.anaconda.com/docs/getting-started/miniconda/install#linux
 
-1) Create ufs2arco by running the following commands:
+1) Create ufs2arco conda environment by running the following commands:
     - conda create -n ufs2arco python=3.12
     - conda activate ufs2arco
     - conda install -c conda-forge ufs2arco openmpi
+
+2) Create anemoi conda environment by running the following commands:
+    - ......
+
+After the conda environments have been created, go follow instructions within each folder in this directory in order:
+1) create data
+2) train model
+3) run inference
+4) run verification
