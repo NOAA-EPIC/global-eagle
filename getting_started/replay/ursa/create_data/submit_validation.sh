@@ -13,7 +13,7 @@
 
 export OMP_NUM_THREADS=2
 
-source ~/miniconda3/etc/profile.d/conda.sh
+source /enterpathtoyourminiconda/miniconda3/etc/profile.d/conda.sh
 module load openmpi
 conda activate ufs2arco
 

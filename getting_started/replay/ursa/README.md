@@ -4,24 +4,18 @@ You will be able to create a training dataset consisting of 1 year of NOAA Repla
 
 This configuration is set up to run on Ursa.
 
-Before getting started, you will need to set up 2 conda environments.
-1) a CPU-based environment for ufs2arco
-2) a GPU-based environment for anemoi
+Before getting started, you will need to set up a conda environment. First, if you have not already, use these instructions to set up miniconda: https://www.anaconda.com/docs/getting-started/miniconda/install#linux. Be sure to install this in your scratch directory, as it's quite big.
 
-Follow the instructions below for environment setup:
-
-First, if you have not already, use these instructions to set up miniconda: https://www.anaconda.com/docs/getting-started/miniconda/install#linux
-
-1) Create ufs2arco conda environment by running the following commands:
-    - conda create -n ufs2arco python=3.12
-    - conda activate ufs2arco
+Create your conda environment by running the following commands:
+    - source /path/to/your/miniconda/in/scratch/miniconda3/bin/activate
+    - conda create -n anemoi python=3.12
+    - conda activate anemoi
+    - module load cuda
+    - pip install anemoi-datasets==0.5.25 anemoi-graphs==0.6.2 anemoi-models==0.8.1 anemoi-training==0.5.1 anemoi-inference==0.6.3 flash-attn mpi4py trimesh 'numpy<2.3' 'earthkit-data<0.14.0' --force-reinstall
     - conda install -c conda-forge ufs2arco openmpi
 
-2) Create anemoi conda environment by running the following commands:
-    - ......
-
 After the conda environments have been created, go follow instructions within each folder in this directory in order:
-1) create data
-2) train model
-3) run inference
-4) run verification
+1) create_data
+2) train_model
+3) run_inference
+4) run_verification
