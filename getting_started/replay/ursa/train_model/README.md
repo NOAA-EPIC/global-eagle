@@ -1,0 +1,1 @@
+sbatch submit_training.sh
