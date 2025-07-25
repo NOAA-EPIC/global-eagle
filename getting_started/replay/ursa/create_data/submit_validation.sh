@@ -15,7 +15,7 @@ export OMP_NUM_THREADS=2
 
 source /enterpathtoyourminiconda/miniconda3/etc/profile.d/conda.sh
 module load openmpi
-conda activate ufs2arco
+conda activate anemoi
 
 srun ufs2arco replay_validation.yaml --overwrite
 echo "Validation dataset is complete"
