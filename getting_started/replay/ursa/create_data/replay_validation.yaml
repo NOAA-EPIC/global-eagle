@@ -74,6 +74,7 @@ target:
     - sin_latitude
     - cos_longitude
     - sin_longitude
+    - cos_latitude
     - cos_julian_day
     - sin_julian_day
     - cos_local_time

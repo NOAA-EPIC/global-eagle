@@ -4,17 +4,6 @@ general_variable:
   _target_: anemoi.training.losses.scalers.GeneralVariableLossScaler
   weights:
     default: 1
-    pl:
-      spfh: 1. #0.6 #1
-      tmp: 1. #6   #1
-      ugrd: 1. #0.8 #0.5
-      vgrd: 1. #0.5 #0.33
-      dzdt: 1. #0.001
-    sfc:
-      pressfc: 1. #10
-      ugrd10m: 1. #0.1
-      vgrd10m: 1. #0.1
-      tmp2m: 1.
 
 pressure_level:
   _target_: anemoi.training.losses.scalers.ReluVariableLevelScaler

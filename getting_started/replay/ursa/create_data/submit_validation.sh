@@ -13,7 +13,7 @@
 
 export OMP_NUM_THREADS=2
 
-source /enterpathtoyourminiconda/miniconda3/etc/profile.d/conda.sh
+source /pathtoyourminiconda3/miniconda3/bin/activate
 module load openmpi
 conda activate anemoi
 

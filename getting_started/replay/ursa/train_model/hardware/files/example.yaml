@@ -1,5 +1,5 @@
-dataset: ???
-graph: ???
+dataset:
+graph:
 truncation: null
 truncation_inv: null
 checkpoint:
