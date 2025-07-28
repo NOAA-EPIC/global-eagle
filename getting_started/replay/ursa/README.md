@@ -15,7 +15,7 @@ Create your conda environment by running the following commands:
 - conda install -c conda-forge ufs2arco openmpi
 
 After the conda environments have been created, go follow instructions within each folder in this directory in order:
-1) create_data
-2) train_model
-3) run_inference
-4) run_verification
+1) data
+2) train
+3) inference
+4) verification
