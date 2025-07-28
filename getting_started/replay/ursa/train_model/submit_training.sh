@@ -11,7 +11,7 @@
 
 source /enterpathtominiconda/miniconda3/bin/activate
 conda activate anemoi
-module load conda
+module load openmpi
 module load cuda
 
 export SLURM_GPUS_PER_NODE=1
