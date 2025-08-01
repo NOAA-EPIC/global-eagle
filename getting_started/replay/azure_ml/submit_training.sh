@@ -1,25 +1,25 @@
-DATA_PATH=$1
+TRAINING_DATA_PATH=$1
 OUTPUT_DIR=$2
+VALIDATION_DATA_PATH=$3
 
-echo "Input data: $DATA_PATH"
+echo "Input data: $TRAINING_DATA_PATH"
+echo "Validation Data Path: $VALIDATION_DATA_PATH"
 echo "Directory for output files: $OUTPUT_DIR"
 
-mkdir -p replay
+mkdir -p /workdir/data
+mkdir -p /workdir/output
 
-ln -s $DATA_PATH replay
-ln -s $OUTPUT_DIR replay/training-output
+# Symlinks so we can connect with data within blob storage
+ln -s "$TRAINING_DATA_PATH" /workdir/data/training.zarr
+ln -s "$OUTPUT_DIR" /workdir/output
+ln -s "$VALIDATION_DATA_PATH" /workdir/data/validation.zarr
 
-export RANK=$OMPI_COMM_WORLD_NODE_RANK
-export WORLD_RANK=$OMPI_COMM_WORLD_NODE_RANK
-export GLOBAL_RANK=$OMPI_COMM_WORLD_NODE_RANK
-export LOCAL_RANK=$OMPI_COMM_WORLD_NODE_RANK
 export WORLD_SIZE=1
 export ANEMOI_BASE_SEED=1000
 export SLURM_GPUS_PER_NODE=1
 export SLURM_NNODES=1
+export RANK=0
 
-# move to environment
 pip install flash-attn
 
-#mpiexec --allow-run-as-root -n $WORLD_SIZE anemoi-training train --config-name=config
 mpirun -np 1 anemoi-training train --config-name=config
