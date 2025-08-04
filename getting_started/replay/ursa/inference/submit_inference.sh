@@ -5,7 +5,7 @@
 #SBATCH -e inference.err
 #SBATCH --nodes=1
 #SBATCH --account=enteraccount
-#SBATCH -t 01:00:00
+#SBATCH -t 10:00
 #SBATCH --partition=u1-h100
 #SBATCH --qos=gpuwf
 
