@@ -5,7 +5,7 @@ lead_time: 240 # hours
 date: 1995-01-01T03
 
 input:
-  dataset: "../data/validation.zarr"
+  dataset: "../data/replay.zarr"
 
 output:
   netcdf: "forecast.nc"

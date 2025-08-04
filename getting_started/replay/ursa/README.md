@@ -1,7 +1,3 @@
-This folder contains what we will consider a "hello world" configuration for the full ufs2arco + anemoi pipeline.
-
-You will be able to create a training dataset consisting of 1 year of NOAA Replay reanalysis, train a graph-based model, run inference, and finally verification on some forecasts.
-
 This configuration is set up to run on Ursa.
 
 Before getting started, you will need to set up a conda environment. First, if you have not already, use these instructions to set up miniconda: https://www.anaconda.com/docs/getting-started/miniconda/install#linux. Be sure to install this in your scratch directory, as it's quite big.

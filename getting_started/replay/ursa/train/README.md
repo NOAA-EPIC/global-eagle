@@ -1,1 +1,1 @@
-sbatch submit_training.sh
+'sbatch submit_training.sh'

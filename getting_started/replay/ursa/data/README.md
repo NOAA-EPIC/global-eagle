@@ -1,7 +1,5 @@
-Commands to submit:
+Command(s) to submit:
 
-sbatch submit_training.sh
-- current set up takes ~ 40 minutes to run
+'sbatch submit_ufs2arco.sh'
 
-sbatch submit_validation.sh
-- current set up takes ~ 7 minutes to run
+Current set up takes ~ 45 minutes to run. I am testing different configurations to see if we can speed this up, but it works for right now!
