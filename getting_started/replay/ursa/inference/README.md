@@ -1,1 +1,1 @@
-'sbatch submit_inference.sh'
+`sbatch submit_inference.sh`
