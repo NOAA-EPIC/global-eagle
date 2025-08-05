@@ -65,8 +65,8 @@ target:
   name: anemoi
   sort_channels_by_levels: True
   statistics_period:
-    start: 1994-01-01T00
-    end: 1994-12-31T18
+    start: 2022-01-01T00
+    end: 2022-12-31T18
 
   forcings:
     - cos_latitude
