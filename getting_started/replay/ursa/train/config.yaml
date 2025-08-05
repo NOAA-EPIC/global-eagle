@@ -72,14 +72,14 @@ dataloader:
     validation: 1
     test: 1
   training:
-    start: 1994
-    end: 1994
+    start: 2022
+    end: 2022
   validation:
-    start: 1995
-    end: 1995
+    start: 2023
+    end: 2023
   test:
-    start: 1996
-    end: 1996
+    start: 2024
+    end: 2024
 
 diagnostics:
   plot:

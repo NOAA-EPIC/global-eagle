@@ -3,7 +3,7 @@ baseline:
   name: GFS
   url: https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.{yyyymmdd}/{hh}/atmos/gfs.t{hh}z.pgrb2.0p25.f{fh:03}
 cycles:
-  - 2022-01-01T12:00:00
+  - 2023-01-01T12:00:00
 forecast:
   coords:
     latitude: latitude
@@ -13,7 +13,7 @@ forecast:
       inittime: forecast_reference_time
       validtime: time
   name: replay_hello_world_example
-  path: /path/to/your/files/2022-01-01T12.240h_post.nc
+  path: /path/to/your/files/2023-01-01T12.240h_post.nc
   projection:
     proj: latlon
 leadtimes:

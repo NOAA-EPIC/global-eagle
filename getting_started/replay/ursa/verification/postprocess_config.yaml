@@ -1,7 +1,7 @@
 # if you are just running 1 initialization, make start==end
 initializations_to_run:
-  start: "2022-01-01T12:00:00"
-  end: "2022-01-01T12:00:00"
+  start: "2023-01-01T12:00:00"
+  end: "2023-01-01T12:00:00"
   freq: "6h"
 
 # path to raw inference files you want to post process

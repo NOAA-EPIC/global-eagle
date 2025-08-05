@@ -2,10 +2,10 @@ checkpoint: "../train/training-output/checkpoint/db6e7078-7b2e-48cb-b3d7-57892d0
 
 lead_time: 240 # hours
 
-date: 1995-01-01T12
+date: 2023-01-01T12
 
 input:
   dataset: "../data/replay.zarr"
 
 output:
-  netcdf: "forecast.nc"
+  netcdf: "2023-01-01T12.nc"
