@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #SBATCH -J validation_data
-#SBATCH -o logs/validation/preprocessing.out
-#SBATCH -e logs/validation/preprocessing.err
-#SBATCH --account=enter_your_account
+#SBATCH -o validation_data.%J.out
+#SBATCH -e validation_data.%J.err
+#SBATCH --account=epic
 #SBATCH --partition=u1-service
 #SBATCH --mem=32g
 #SBATCH -t 01:00:00
@@ -13,7 +13,7 @@
 
 export OMP_NUM_THREADS=2
 
-source /pathtoyourminiconda3/miniconda3/bin/activate
+source /scratch4/NAGAPE/epic/Wei.Huang/src/miniconda3/bin/activate
 module load openmpi
 conda activate anemoi
 
