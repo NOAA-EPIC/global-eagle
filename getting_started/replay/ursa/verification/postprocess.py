@@ -191,7 +191,7 @@ def run(
     raw_inference_files_base_path = config["raw_inference_files_base_path"]
 
     file_date = datetime.fromisoformat(initialization).strftime("%Y-%m-%dT%H")
-    file_name = f"{file_date}.240h"
+    file_name = f"{file_date}"
 
     ds = open_raw_inference(
         path_to_raw_inference=f"{raw_inference_files_base_path}/{file_name}.nc"

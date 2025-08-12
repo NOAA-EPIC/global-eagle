@@ -13,7 +13,7 @@ forecast:
       inittime: forecast_reference_time
       validtime: time
   name: replay_hello_world_example
-  path: /path/to/your/files/2023-01-01T12.240h_post.nc
+  path: ./2023-01-01T12_postprocessed.nc
   projection:
     proj: latlon
 leadtimes:
@@ -23,7 +23,7 @@ leadtimes:
 meta:
   grids: "{{ meta.workdir }}/grids"
   levels: &levels [925]
-  workdir: /path/to/your/files/workdir/
+  workdir: /full/path/to/global-eagle/getting_started/ursa/verification/output
 paths:
   grids:
     baseline: "{{ meta.grids }}/baseline"

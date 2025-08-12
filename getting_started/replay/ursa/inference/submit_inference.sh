@@ -7,6 +7,8 @@
 #SBATCH --account=enteraccount
 #SBATCH -t 10:00
 #SBATCH --partition=u1-h100
+#SBATCH --gres=gpu:h100:1
+#SBATCH --mem=96g
 #SBATCH --qos=gpuwf
 
 source /enterpathtominiconda/miniconda3/bin/activate
