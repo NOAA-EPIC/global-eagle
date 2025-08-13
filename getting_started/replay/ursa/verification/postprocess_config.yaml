@@ -5,7 +5,7 @@ initializations_to_run:
   freq: "6h"
 
 # path to raw inference files you want to post process
-raw_inference_files_base_path: "path/to/your/files"
+raw_inference_files_base_path: "../inference"
 
 # this next portion lists all variable info out so the script knows what variables to process.
 # can be helpful if you don't care about all variables or levels.
