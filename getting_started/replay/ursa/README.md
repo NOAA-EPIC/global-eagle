@@ -9,7 +9,7 @@ conda create -n anemoi python=3.12
 conda activate anemoi
 module load cuda
 pip install anemoi-datasets==0.5.25 anemoi-graphs==0.6.2 anemoi-models==0.8.1 anemoi-training==0.5.1 anemoi-inference==0.6.3 flash-attn mpi4py trimesh 'numpy<2.3' 'earthkit-data<0.14.0' --force-reinstall
-conda install -c conda-forge ufs2arco openmpi
+conda install -c conda-forge ufs2arco
 ```
 
 After the conda environments have been created, go follow instructions within each folder in this directory in order:
