@@ -2,7 +2,7 @@ mover:
   name: mpidatamover
 
 directories:
-  zarr: replay/replay.zarr
+  zarr: replay/data/replay.zarr
   cache: logs/training/cache
   logs: logs/training/ufs2arco
 
