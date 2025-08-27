@@ -1,4 +1,4 @@
-checkpoint: "../train/training/training-output/checkpoint/35a9632c-ab04-4284-af5e-4defcef37cff/inference-last.ckpt"
+checkpoint: "../train/training-output/checkpoint/35a9632c-ab04-4284-af5e-4defcef37cff/inference-last.ckpt"
 
 lead_time: 48 # hours
 

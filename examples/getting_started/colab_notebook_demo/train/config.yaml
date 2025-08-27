@@ -195,4 +195,4 @@ model:
         - spfh_975
 
 training:
-  max_steps: 1_000
+  max_steps: 50
