@@ -1,10 +1,11 @@
 mover:
   name: datamover
+  batch_size: 2
 
 directories:
-  zarr: replay.zarr
-  cache: cache
-  logs: logs
+  zarr: global-eagle/examples/getting_started/colab_notebook_demo/data/replay.zarr
+  cache: global-eagle/examples/getting_started/colab_notebook_demo/data/cache
+  logs: global-eagle/examples/getting_started/colab_notebook_demo/data/logs
 
 source:
   name: gcs_replay_atmosphere

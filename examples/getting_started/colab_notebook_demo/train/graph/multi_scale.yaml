@@ -1,3 +1,4 @@
+---
 overwrite: True
 
 data: "data"
@@ -9,13 +10,13 @@ nodes:
     node_builder:
       _target_: anemoi.graphs.nodes.AnemoiDatasetNodes # options: AnemoiDatasetNodes, NPZFileNodes
       dataset: ${dataloader.dataset}
-    attributes: ${graph.attributes.nodes} # options: l1, l2, unit-max, unit-sum, unit-std
+    attributes: ${graph.attributes.nodes}
   # Hidden nodes
   hidden:
     node_builder:
-      _target_: anemoi.graphs.nodes.AnemoiDatasetNodes # options: AnemoiDatasetNodes, NPZFileNodes
-      dataset: ${dataloader.dataset}
-    attributes: ${graph.attributes.nodes} # options: l1, l2, unit-max, unit-sum, unit-std
+      _target_: anemoi.graphs.nodes.TriNodes # options: AnemoiDatasetNodes, NPZFileNodes, TriNodes
+      resolution: 5 # grid resolution for npz (o32, o48, ...)
+    attributes: ${graph.attributes.nodes}
 
 edges:
   # Encoder configuration
@@ -26,7 +27,16 @@ edges:
         cutoff_factor: 0.6 # only for cutoff method
         source_mask_attr_name: null
         target_mask_attr_name: null
-
+    attributes: ${graph.attributes.edges}
+    # Processor configuration
+  - source_name: ${graph.hidden}
+    target_name: ${graph.hidden}
+    edge_builders:
+      - _target_: anemoi.graphs.edges.MultiScaleEdges
+        x_hops: 1
+        scale_resolutions: ${graph.nodes.hidden.node_builder.resolution}
+        source_mask_attr_name: null
+        target_mask_attr_name: null
     attributes: ${graph.attributes.edges}
     # Decoder configuration
   - source_name: ${graph.hidden}
