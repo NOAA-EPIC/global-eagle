@@ -10,7 +10,7 @@ source:
   name: gfs_archive
   t0:
     start: 2022-01-01T00
-    end: 2022-01-081T18
+    end: 2022-01-08T18
     freq: 6h
 
   fhr:
