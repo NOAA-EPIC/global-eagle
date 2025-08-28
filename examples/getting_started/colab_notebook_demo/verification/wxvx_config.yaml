@@ -1,7 +1,8 @@
 baseline:
   compare: true
   name: GFS
-  url: https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.{yyyymmdd}/{hh}/atmos/gfs.t{hh}z.pgrb2.0p25.f{fh:03}
+  type: grid
+  url: https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.{{ yyyymmdd }}/{{ hh }}/atmos/gfs.t{{ hh }}z.pgrb2.0p25.f{{ "%03d" % fh }}
 cycles:
   - 2022-01-03T00:00:00
 forecast:
