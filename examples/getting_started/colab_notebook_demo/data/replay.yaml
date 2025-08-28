@@ -1,6 +1,5 @@
 mover:
-  name: datamover
-  batch_size: 2
+  name: mpidatamover
 
 directories:
   zarr: global-eagle/examples/getting_started/colab_notebook_demo/data/replay.zarr
