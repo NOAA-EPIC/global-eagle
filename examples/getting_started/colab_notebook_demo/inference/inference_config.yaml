@@ -1,0 +1,11 @@
+checkpoint: "../train/training-output/checkpoint/35a9632c-ab04-4284-af5e-4defcef37cff/inference-last.ckpt"
+
+lead_time: 48 # hours
+
+date: 2022-01-03T00
+
+input:
+  dataset: "../data/replay.zarr"
+
+output:
+  netcdf: "2022-01-03T00.nc"
