@@ -2,7 +2,7 @@ mover:
   name: mpidatamover
 
 directories:
-  zarr: training.zarr
+  zarr: replay/replay.zarr
   cache: logs/training/cache
   logs: logs/training/ufs2arco
 
@@ -10,8 +10,8 @@ source:
   name: gcs_replay_atmosphere
   uri: gs://noaa-ufs-gefsv13replay/ufs-hr1/0.25-degree-subsampled/03h-freq/zarr/fv3.zarr
   time:
-    start: 1994-01-01T00
-    end: 1994-12-31T18
+    start: 2022-01-01T00
+    end: 2023-03-31T18
     freq: 6h
 
   variables:
@@ -33,14 +33,14 @@ source:
     # Layer thickness is only included for Finite Volume vertical Regridding
     - delz
 
-  slices:
-    sel:
-      level: [200, 1000]
-
 transforms:
   fv_vertical_regrid:
     weight_var: delz
     interfaces:
+      - 0
+      - 50
+      - 100
+      - 150
       - 200
       - 250
       - 300
@@ -61,20 +61,18 @@ transforms:
     use_nearest_interfaces: True
     keep_weight_var: False # drop the layer thickness variable after vertical regridding
 
-  mappings:
-    log:
-      - spfh
-      - spfh2m
-
 target:
   name: anemoi
   sort_channels_by_levels: True
+  statistics_period:
+    start: 2022-01-01T00
+    end: 2023-12-31T18
 
   forcings:
+    - cos_latitude
     - sin_latitude
     - cos_longitude
     - sin_longitude
-    - cos_latitude
     - cos_julian_day
     - sin_julian_day
     - cos_local_time

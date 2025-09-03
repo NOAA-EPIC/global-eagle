@@ -14,4 +14,4 @@ export OMPI_COMM_WORLD_RANK=0
 export RANK=0
 export WORLD_SIZE=8
 
-mpirun -np 8 ufs2arco replay_training.yaml
+mpirun -np 8 ufs2arco replay.yaml

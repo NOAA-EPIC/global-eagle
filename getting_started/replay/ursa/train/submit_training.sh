@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH -J replay_trainingg
+#SBATCH -J replay_training
 #SBATCH -o slurm/training.out
 #SBATCH -e slurm/training.err
 #SBATCH --nodes=1
@@ -23,7 +23,6 @@ export HYDRA_FULL_ERROR=1
 #srun anemoi-training train --config-name=config --cfg job
 #srun anemoi-training train --config-name=config 'diagnostics.callbacks=[]'
 
-srun anemoi-training train --config-name=config
+#srun anemoi-training train --config-name=config
 
-#debug
-#srun anemoi-training train --config-name=config --cfg job | grep -A 6 "memory:"
+srun anemoi-training train --config-name=config.yaml
