@@ -1,0 +1,25 @@
+forecast_path: ../inference/inference_files
+output_path: postprocessed_files/lam
+model_type: nested-lam
+lam_index: 64220
+lcc_info:
+  n_y: 338
+  n_x: 190
+vars_of_interest:
+  - t2m
+  - gh
+  - sp
+  - t
+  - u
+  - u10
+  - v
+  - v10
+
+levels:
+  - 250
+  - 500
+  - 850
+
+start_date: 2023-06-01T06
+end_date: 2023-06-30T12
+freq: 54h
