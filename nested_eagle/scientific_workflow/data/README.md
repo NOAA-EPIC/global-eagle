@@ -1,8 +1,8 @@
-Run `sbatch submit_gfs.sh` first.
+Run `sbatch submit_grids.sh` first.
 
-Wait a few minutes until you see grids in the folder ("global_one_degree.nc" and ""hrrr_15km.nc").
+Run `sbatch submit_gfs.sh` next.
 
-Then, run `sbatch submit_hrrr.sh`.
+Run `sbatch submit_hrrr.sh`.
 
 Ideally, we will just submit these together in one job. We are restricted to 4 cores per job on Ursa at the moment, so this makes the whole process go a bit faster. 
 
