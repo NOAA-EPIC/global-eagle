@@ -244,6 +244,8 @@ graph:
     #post_processors:
     #- _target_: anemoi.graphs.processors.SortEdgeIndexByTargetNodes
     #  descending: True  # optional, defaults to true
+# commenting the post-processors out for right now because I think there may be a bug in Anemoi-Models
+# I'll circle back to this at some point.
 
 hardware:
   num_gpus_per_model: 1
