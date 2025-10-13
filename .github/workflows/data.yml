@@ -6,18 +6,6 @@ name: Eagle Pipeline
 # or API.
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
-        required: true
-        # The data type of the input
-        type: string
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
@@ -31,3 +19,7 @@ jobs:
       uses: actions/checkout@v4 
       with:
         ref: kb-pipeline
+    - name: Submit Initial Grids
+      run: |
+        cd nested_eagle/scientific_workflow/data
+        sbatch submit_grids.sh
