@@ -1,0 +1,25 @@
+# This is a basic workflow that is manually triggered
+
+name: Nested Eagle 
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  submit_grids:
+    # The type of runner that the job will run on
+    runs-on: ursa
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Setup to submit grids to collect GFS and HRRR data
+    - name: Checkout specific branch
+        uses: actions/checkout@v4
+        with:
+          ref: kb-pipeline 
+    - name: Submit Grids 
+      run: echo "Hello world!" 
