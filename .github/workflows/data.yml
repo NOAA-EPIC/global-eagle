@@ -18,8 +18,8 @@ jobs:
     steps:
     # Setup to submit grids to collect GFS and HRRR data
     - name: Checkout specific branch
-        uses: actions/checkout@v4
-        with:
+      uses: actions/checkout@v4
+      with:
           ref: kb-pipeline 
     - name: Submit Grids 
       run: echo "Hello world!" 
