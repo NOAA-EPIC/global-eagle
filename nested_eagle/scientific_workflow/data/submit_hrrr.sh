@@ -11,8 +11,10 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=24:00:00
 
-source /ENTERPATHTOYOURMINICONDAINSCRATCH/miniconda3/bin/activate
+source /scratch4/NAGAPE/epic/role-epic/miniconda/bin/activate
 conda activate eagle
 module load openmpi gcc
+
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 
 srun ufs2arco hrrr.yaml --overwrite
