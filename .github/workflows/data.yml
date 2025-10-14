@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
+  # This workflow contains a job called submit_grids.
   Submit_Grids:
     # The type of runner that the job will run on
     runs-on: ursa
@@ -22,12 +22,26 @@ jobs:
     - name: Submit Initial Grids
       run: |
         cd nested_eagle/scientific_workflow/data
-        JOB_ID=$(sbatch submit_grids.sh | awk '{print $4}')
-            echo "Submitted Slurm job with ID: $JOB_ID"
+        echo "did the grids" 
+      #  JOB_ID=$(sbatch submit_grids.sh | awk '{print $4}')
+      #      echo "Submitted Slurm job with ID: $JOB_ID"
             
-            while squeue -j $JOB_ID &>/dev/null; do
-              echo "Slurm job $JOB_ID is still running or pending. Waiting..."
-              sleep 30 # Wait for 30 seconds before checking again
-            done
+      #      while squeue -j $JOB_ID &>/dev/null; do
+      #        echo "Slurm job $JOB_ID is still running or pending. Waiting..."
+      #        sleep 30 # Wait for 30 seconds before checking again
+      #      done
             
-            echo "Slurm job $JOB_ID has completed."
+      #      echo "Slurm job $JOB_ID has completed."
+  Generate_Forecasts:
+    # The type of runner that the job will run on
+    runs-on: ursa
+    steps:
+      - uses: qoomon/actions--parallel-steps@v1
+        id: parallel-steps
+        with:
+          # defaults: # see https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#defaults
+          steps: |
+            - run: srun -N 1 hostname
+            - run: srun -N 1 date
+
+    
