@@ -38,6 +38,7 @@ jobs:
     steps:
       - uses: qoomon/actions--parallel-steps@v1
         id: parallel-steps
+        continue-on-error: true
         with:
           # defaults: # see https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#defaults
           steps: |
