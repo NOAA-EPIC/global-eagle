@@ -32,9 +32,10 @@ jobs:
             done
             
             echo "Slurm job $JOB_ID to generate the grids has completed."
-  Generate_Forecasts:
+  Generate_GFS_Forecast:
     # The type of runner that the job will run on
     runs-on: ursa
+    needs: Submit_Grids
     steps:
       - name: Generate GFS Forecast
         run: |
@@ -49,6 +50,11 @@ jobs:
             done
             
             echo "Slurm job $JOB_ID to generate the GFS forecast has completed."
+  Generate_HRRR_Forecast:
+    # The type of runner that the job will run on
+    runs-on: ursa
+    needs: Submit_Grids
+    steps:
       - name: Generate HRRR Forecast
         run: |
          cd nested_eagle/scientific_workflow/data
@@ -62,4 +68,3 @@ jobs:
             done
             
             echo "Slurm job $JOB_ID to generate the HRRR forecast has completed."
-    
