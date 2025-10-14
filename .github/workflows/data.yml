@@ -36,13 +36,8 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ursa
     steps:
-      - uses: qoomon/actions--parallel-steps@v1
-        id: parallel-steps
-        continue-on-error: true
-        with:
-          # defaults: # see https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#defaults
-          steps: |
-            - run: date && sleep 20
-            - run: date && sleep 10
-
+      - name: Generate GFS Forecast
+        run: echo "Running GFS Forecast in Job 2" && sleep 10
+      - name: Generate HRRR Forecast
+        run: echo "Running HRRR Forecast in Job 2" && sleep 20
     
