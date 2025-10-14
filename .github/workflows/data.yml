@@ -41,7 +41,7 @@ jobs:
         with:
           # defaults: # see https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#defaults
           steps: |
-            - run: srun -A epic -N 1 date && sleep 20
-            - run: srun -A epic -N 1 date && sleep 10
+            - run: date && sleep 20
+            - run: date && sleep 10
 
     
