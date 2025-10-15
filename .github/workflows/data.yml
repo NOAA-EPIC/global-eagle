@@ -54,6 +54,7 @@ jobs:
               # squeue -j <job_id1>,<job_id2> will return output if either job is still active
               if squeue -h -j "$JOB_ID1,$JOB_ID2" > /dev/null; then
                 echo "Jobs $JOB_ID1 and $JOB_ID2 are still running or pending. Sleeping for 30 seconds."
+                squeue -u $USER 
                 sleep 30
               else
                 # If the squeue command returns no output, both jobs have finished
