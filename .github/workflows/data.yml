@@ -12,6 +12,7 @@ jobs:
   Submit_Grids:
     # The type of runner that the job will run on
     runs-on: ursa
+    timeout-minutes: 1440
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -35,6 +36,7 @@ jobs:
   Generate_Forecasts:
     # The type of runner that the job will run on
     runs-on: ursa
+    timeout-minutes: 1440
     needs: Submit_Grids
     steps:
       - name: Generate GFS & HRRR Forecasts
