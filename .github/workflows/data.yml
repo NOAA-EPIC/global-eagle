@@ -16,24 +16,24 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-#    - name: Checkout a specific branch
-#      uses: actions/checkout@v4 
-#      with:
-#        ref: kb-pipeline
+    - name: Checkout a specific branch
+      uses: actions/checkout@v4 
+      with:
+        ref: kb-pipeline
     - name: Submit Initial Grids
       run: |
          cd nested_eagle/scientific_workflow/data
-         echo "Slurm job to generate the grids has completed."
-#
-#        JOB_ID=$(sbatch submit_grids.sh | awk '{print $4}')
-#            echo "Submitted Slurm job with ID: $JOB_ID"
-#            
-#            while squeue -j $JOB_ID &>/dev/null; do
-#              echo "Slurm job $JOB_ID is still running or pending. Waiting..."
-#              sleep 30 # Wait for 30 seconds before checking again
-#            done
+        
+
+         JOB_ID=$(sbatch submit_grids.sh | awk '{print $4}')
+            echo "Submitted Slurm job with ID: $JOB_ID"
             
-#          echo "Slurm job $JOB_ID to generate the grids has completed."
+            while squeue -j $JOB_ID &>/dev/null; do
+              echo "Slurm job $JOB_ID is still running or pending. Waiting..."
+              sleep 30 # Wait for 30 seconds before checking again
+            done
+            
+          echo "Slurm job $JOB_ID to generate the grids has completed."
   Generate_Forecasts:
     # The type of runner that the job will run on
     runs-on: ursa
@@ -44,18 +44,18 @@ jobs:
         run: |
          cd nested_eagle/scientific_workflow/data
          echo "Slurm jobs to generate the GFS & HRRR forecasts have completed."
-#         
-#         JOB_ID1=$(sbatch submit_gfs.sh | awk '{print $4}')
-#         JOB_ID2=$(sbatch submit_hrrr.sh | awk '{print $4}')
-#         
-#            echo "Submitted Slurm job with ID: $JOB_ID1"
-#            echo "Submitted Slurm job with ID: $JOB_ID2"
-#            while squeue -h -j ${JOB_ID1},${JOB_ID2} | grep -q "${JOB_ID1}\|${JOB_ID2}"; do
-#               squeue -u $USER
-#               sleep 30  # Wait for 30 seconds before checking again.
-#            done
-#            
-#            echo "Slurm jobs $JOB_ID1 and $JOB_ID2 to generate the GFS & HRRR forecasts have completed."
+         
+         JOB_ID1=$(sbatch submit_gfs.sh | awk '{print $4}')
+         JOB_ID2=$(sbatch submit_hrrr.sh | awk '{print $4}')
+         
+            echo "Submitted Slurm job with ID: $JOB_ID1"
+            echo "Submitted Slurm job with ID: $JOB_ID2"
+            while squeue -h -j ${JOB_ID1},${JOB_ID2} | grep -q "${JOB_ID1}\|${JOB_ID2}"; do
+               squeue -u $USER
+               sleep 30  # Wait for 30 seconds before checking again.
+            done
+            
+            echo "Slurm jobs $JOB_ID1 and $JOB_ID2 to generate the GFS & HRRR forecasts have completed."
   Run_Training:
     # The type of runner that the job will run on
     runs-on: ursa
@@ -72,7 +72,6 @@ jobs:
          echo "Submitted Slurm job with ID: $JOB_ID"
           while [ ! -d "$CHECKPOINT" ]; do
             echo "Directory '$CHECKPOINT' doesn't exist yet."
-            pwd
             squeue -u $USER
             sleep 30  # Wait for 30 seconds before checking again.
           done
