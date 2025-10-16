@@ -11,10 +11,4 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=24:00:00
 
-source /ENTERPATHTOYOURMINICONDAINSCRATCH/miniconda3/bin/activate
-conda activate eagle
-module load openmpi gcc
-
-python create_grids.py
-
-srun ufs2arco gfs.yaml --overwrite
+sleep 60 && echo "I did the forecast!"

@@ -11,8 +11,4 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=24:00:00
 
-source /ENTERPATHTOYOURMINICONDAINSCRATCH/miniconda3/bin/activate
-conda activate eagle
-module load openmpi gcc
-
-srun ufs2arco hrrr.yaml --overwrite
+sleep 90 && echo "I did the forecast!"
