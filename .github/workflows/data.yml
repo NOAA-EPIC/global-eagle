@@ -48,19 +48,10 @@ jobs:
          
             echo "Submitted Slurm job with ID: $JOB_ID1"
             echo "Submitted Slurm job with ID: $JOB_ID2"
-            
-            while true; do
-              # Check if both jobs are still in the queue (or running)
-              # squeue -j <job_id1>,<job_id2> will return output if either job is still active
-              if squeue -h -j "$JOB_ID1,$JOB_ID2" > /dev/null; then
-                echo "Jobs $JOB_ID1 and $JOB_ID2 are still running or pending. Sleeping for 30 seconds."
-                squeue -u $USER 
-                sleep 30
-              else
-                # If the squeue command returns no output, both jobs have finished
-                echo "Jobs $jobid1 and $jobid2 have completed."
-                break
-              fi
+            while squeue -h -j ${JOB_ID1},${JOB_ID2} | grep -q "${JOB_ID1}\|${JOB_ID2}"; do
+               squeue -u $USER
+               sleep 30  # Wait for 30 seconds before checking again.
             done
+            
             echo "Slurm jobs $JOB_ID1 and $JOB_ID2 to generate the GFS & HRRR forecasts have completed."
           
