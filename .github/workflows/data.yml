@@ -67,13 +67,14 @@ jobs:
          cd nested_eagle/scientific_workflow/training
 
          JOB_ID=$(sbatch submit_training.sh | awk '{print $4}')
-         CHECKPOINT="outputs/checkpoint"
+         CHECKPOINT="$PWD/outputs/checkpoint"
 
          echo "Submitted Slurm job with ID: $JOB_ID"
           while [ ! -d "$CHECKPOINT" ]; do
             echo "Directory '$CHECKPOINT' doesn't exist yet."
             pwd
             squeue -u $USER
+            sleep 30  # Wait for 30 seconds before checking again.
           done
             scancel $JOB_ID
             echo "Slurm job $JOB_ID to train the data has been completed."
