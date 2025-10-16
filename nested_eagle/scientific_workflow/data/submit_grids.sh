@@ -8,10 +8,8 @@
 #SBATCH --mem=128g
 #SBATCH -t 01:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks=4 
 
-source /scratch4/NAGAPE/epic/role-epic/miniconda/bin/activate
+source /ENTERPATHTOYOURMINICONDAINSCRATCH/miniconda3/bin/activate
 conda activate eagle
 module load gcc
-export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 python create_grids.py
