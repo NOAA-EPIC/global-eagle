@@ -11,4 +11,10 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=24:00:00
 
-sleep 90 && echo "I did the forecast!"
+source /scratch4/NAGAPE/epic/role-epic/miniconda/bin/activate
+conda activate eagle
+module load openmpi gcc
+
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+
+srun ufs2arco hrrr.yaml --overwrite
