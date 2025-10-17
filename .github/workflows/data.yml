@@ -91,10 +91,32 @@ jobs:
         run: |
           cd nested_eagle/scientific_workflow/inference
 
-          JOB_ID=$(sbatch submit_inference.sh | awk '{print $4}')
+    #      JOB_ID=$(sbatch submit_inference.sh | awk '{print $4}')
+    #    
+    #     
+    #        echo "Submitted Inference Slurm job with ID: $JOB_ID"
+    #       
+    #        while squeue -h -j ${JOB_ID} | grep -q "${JOB_ID}"; do
+    #           squeue -u $USER
+    #           sleep 30  # Wait for 30 seconds before checking again.
+    #        done
+
+    #         echo "Slurm job $JOB_ID to run inference on the data has been completed."
+
+  Perform_Validation:
+  # The type of runner that the job will run on
+    runs-on: ursa
+    timeout-minutes: 1440
+    needs: Run_Inference
+    steps:
+      - name: Perform validation against the results
+        run: |
+          cd nested_eagle/scientific_workflow/validation
+
+          JOB_ID=$(sbatch submit_validation.sh | awk '{print $4}')
         
          
-            echo "Submitted Inference Slurm job with ID: $JOB_ID"
+            echo "Submitted Validation Slurm job with ID: $JOB_ID"
            
             while squeue -h -j ${JOB_ID} | grep -q "${JOB_ID}"; do
                squeue -u $USER
