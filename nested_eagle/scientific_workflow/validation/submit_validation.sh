@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #SBATCH -J perform_validation 
-#SBATCH -o slurm_%d.%j.out
-#SBATCH -e slurm_%d.%j.err
+#SBATCH -o slurm-%j.out
+#SBATCH -e slurm-.%j.err
 #SBATCH --account=epic
 #SBATCH --partition=u1-service
 #SBATCH --mem=128g
