@@ -20,7 +20,7 @@ jobs:
     #  uses: actions/checkout@v4 
     #  with:
     #    ref: kb-pipeline
-    #- name: Submit Initial Grids
+    - name: Submit Initial Grids
       run: |
          cd nested_eagle/scientific_workflow/data
         
@@ -33,7 +33,7 @@ jobs:
     #          sleep 30 # Wait for 30 seconds before checking again
     #        done
             
-          echo "Slurm job $JOB_ID to generate the grids has completed."
+          echo "Slurm job to generate the grids has completed."
   Generate_Forecasts:
     # The type of runner that the job will run on
     runs-on: ursa
