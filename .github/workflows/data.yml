@@ -16,13 +16,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    #- name: Checkout a specific branch
+    # - name: Checkout a specific branch
     #  uses: actions/checkout@v4 
     #  with:
     #    ref: kb-pipeline
-    - name: Submit Initial Grids
-      run: |
+     - name: Submit Initial Grids
+       run: |
          cd nested_eagle/scientific_workflow/data
+         echo "Slurm job to generate the grids has completed."
         
 
     #     JOB_ID=$(sbatch submit_grids.sh | awk '{print $4}')
@@ -33,7 +34,7 @@ jobs:
     #          sleep 30 # Wait for 30 seconds before checking again
     #        done
             
-          echo "Slurm job to generate the grids has completed."
+     
   Generate_Forecasts:
     # The type of runner that the job will run on
     runs-on: ursa
@@ -65,6 +66,7 @@ jobs:
       - name: Run Training Against the Generated Forecasts
         run: |
          cd nested_eagle/scientific_workflow/training
+         echo "Slurm job to train the data has been completed."
 
      #    JOB_ID=$(sbatch submit_training.sh | awk '{print $4}')
      #    CHECKPOINT="$PWD/outputs/checkpoint"
@@ -76,7 +78,7 @@ jobs:
      #       sleep 30  # Wait for 30 seconds before checking again.
      #     done
      #       scancel $JOB_ID
-            echo "Slurm job to train the data has been completed."
+            
              
 
   Run_Inference:
