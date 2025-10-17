@@ -125,7 +125,7 @@ jobs:
                sleep 30  # Wait for 30 seconds before checking again.
             done
 
-             echo "Slurm job $JOB_ID to run inference on the data has been completed."
+             echo "Slurm job $JOB_ID to perform validation has been completed."
         
 
          
