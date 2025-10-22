@@ -6,7 +6,6 @@
 #SBATCH --account=epic
 #SBATCH --partition=u1-compute
 #SBATCH --mem=128g
-#SBATCH --time=24:00:00
 
 source /scratch4/NAGAPE/epic/role-epic/miniconda/bin/activate
 conda activate eagle
