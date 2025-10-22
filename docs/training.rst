@@ -2,7 +2,7 @@
 Train a Graph-Based Model
 =================
 
-We use the anemoi-core modules to train a graph-baed model.
+We use the anemoi-core modules to train a graph-based model.
 
 Helpful quick tips for using Anemoi
 
