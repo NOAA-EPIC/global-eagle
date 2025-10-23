@@ -2,17 +2,14 @@
 Getting Started
 =================
 
-Learn how to use the full `ufs2arco + Anemoi + wxvx` pipeline.
+We have included a few options to learn how to get started with this pipeline.
 
-You will learn how to:
+Google Collab
+~~~~~~~~~~~~~~~~~~~~~~
 
-1) Use `ufs2arco` to create training and validation datasets with NOAA Replay reanalysis
-2) Use `anemoi-core` modules to train a graph-based model
-3) Use `anemoi-inference` to run inference
-4) Use `wxvx` to verify a forecast
+Insert info about collab and point to it
 
--------------
-Ursa
--------------
+Train a Small Model with NOAA-Replay Data
+~~~~~~~~~~~~~~~~~~~~~~
 
-Insert instructions for Ursa
+Insert info about replay option and point to it
