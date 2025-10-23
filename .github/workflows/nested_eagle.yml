@@ -4,13 +4,13 @@ name: Nested Eagle CI Pipeline
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-  pull_request:
-    branches:
-      - main
+  pull_request_review:
+    types: [submitted]
 jobs:
   # This workflow contains a job called submit_grids.
   Submit_Grids:
-    # The type of runner that the job will run on
+  if: github.event.review.state == 'approved'
+    # Only run the workflow if a PR is submitted and approved. 
     runs-on: ursa
     timeout-minutes: 1440
 
