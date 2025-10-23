@@ -12,11 +12,14 @@
 #SBATCH --qos=gpuwf
 #SBATCH --ntasks-per-node=1
 
-source /ENTERPATHTOYOURMINICONDAINSCRATCH/miniconda3/bin/activate
+source /scratch3/NCEPDEV/global/Anil.Kumar/miniconda3/bin/activate
 conda activate eagle
 module load openmpi
 module load cuda
 module load gcc
+
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+
 export SLURM_GPUS_PER_NODE=1
 
 srun anemoi-training train --config-name=config

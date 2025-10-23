@@ -9,11 +9,13 @@
 #SBATCH --partition=u1-h100
 #SBATCH --gres=gpu:h100:1
 #SBATCH --mem=64g
-#SBATCH --qos=gpu
+#SBATCH --qos=gpuwf
 #SBATCH --ntasks-per-node=1
 
-source /ENTERPATHTOYOURMINICONDAINSCRATCH//miniconda3/bin/activate
+source /scratch3/NCEPDEV/global/Anil.Kumar/miniconda3/bin/activate
 conda activate eagle
 module load cuda
+
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 
 eagle-tools inference inference.yaml
