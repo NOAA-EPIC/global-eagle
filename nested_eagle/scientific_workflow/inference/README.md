@@ -1,9 +1,9 @@
-First, modify the checkpoint path in `inference_config.yaml` with the path to your checkpoint data from the training step. If you have used the defaults, this will just be changing the run ID to the one noted during that step.
 
-Then, modify `submit_inference.sh` with your project account and the path to your miniconda installation.
-
-Finally run the following to submit a job to create a 10-day forecast:
+Run the following to submit a job to create a 10-day forecast:
 
 `sbatch submit_inference.sh`
 
 This will generate a NetCDF file with your forecast in the `inference_files` directory.
+
+Note:
+Within `inference_config.yaml` you will find a path to a checkpoint. The submit script updates that for you. However, if you have trained multiple models you may have to go edit this yourself to find the specific run_id you wish to use a checkpoint from.
