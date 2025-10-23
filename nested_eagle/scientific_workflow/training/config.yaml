@@ -83,13 +83,13 @@ dataloader:
     min_distance_km: 0
   training:
     start: 2022-02-01
-    end: 2023-01-31
+    end: 2022-02-07
   validation:
-    start: 2023-02-01
-    end: 2024-01-31
+    start: 2022-02-08
+    end: 2022-02-10
   test:
-    start: 2023-02-01
-    end: 2024-01-31
+    start: 2022-02-08
+    end: 2022-02-10
 
 diagnostics:
   log:
@@ -241,9 +241,9 @@ graph:
         _target_: anemoi.graphs.edges.attributes.EdgeDirection
         norm: unit-std
 
-    #post_processors:
-    #- _target_: anemoi.graphs.processors.SortEdgeIndexByTargetNodes
-    #  descending: True  # optional, defaults to true
+    post_processors:
+    - _target_: anemoi.graphs.processors.SortEdgeIndexByTargetNodes
+      descending: True  # optional, defaults to true
 # commenting the post-processors out for right now because I think there may be a bug in Anemoi-Models
 # I'll circle back to this at some point.
 

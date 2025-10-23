@@ -20,6 +20,6 @@ levels:
   - 500
   - 850
 
-start_date: 2023-06-01T06
-end_date: 2023-06-30T12
+start_date: 2022-02-01T06
+end_date: 2022-02-30T12
 freq: 54h
