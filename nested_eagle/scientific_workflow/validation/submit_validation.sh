@@ -8,7 +8,7 @@
 #SBATCH --mem=128g
 #SBATCH -t 01:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks=4 
+#SBATCH --ntasks=1
 
 source /scratch4/NAGAPE/epic/role-epic/miniconda/bin/activate
 

@@ -19,7 +19,5 @@ module load cuda
 module load gcc
 export SLURM_GPUS_PER_NODE=1
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
-#srun anemoi-training train --config-name=config
-
 
 anemoi-training train --config-name=config

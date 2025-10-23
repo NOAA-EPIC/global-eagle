@@ -1,14 +1,31 @@
-conda
+There are two folders within this `nested_eagle` directory:
 
+1) `scientific_workflow` will guide you through a whole ML pipeline to create training data, train a model, run inference, and verify a forecast. 
+2) `operational_inference` provides scripts to run inference from a checkpoint in near real time. These scripts will assume you have a checkpoint from completing `scientifc_workflow` and want to run a near real time forecast with it.
+
+----------
+
+Before starting anything, you must create two conda environments.
+1) `eagle` environment to use for data creation, training, and inference
+2) `wxvx` environment to use for verification
+
+These environments have already been made for you on Ursa and can by found by running`source /scratch4/NAGAPE/epic/role-epic/miniconda/bin/activate`
+
+Then, simply activate the environments by running `conda activate eagle` or `conda activate wxvx`
+
+----------
+
+To create the necessary environments yourself, run the following commands:
+
+`eagle` environment to use for data creation, training, and inference:
 ```
-conda create -n eagle python=3.11
-conda activate eagle
 module load cuda gcc openmpi
-conda install -c conda-forge xesmf
-conda install -c conda-forge ufs2arco=0.17.1
-conda install -c conda-forge matplotlib cartopy cmocean
-pip install 'torch<2.7' anemoi-datasets==0.5.26 anemoi-graphs==0.6.4 anemoi-models==0.9.2 anemoi-training==0.6.2 anemoi-inference==0.7.1 anemoi-utils==0.4.35 anemoi-transform==0.1.16
+conda env create -f environment.yaml
+conda activate eagle
 pip install 'flash-attn<2.8' --no-build-isolation
-pip install eagle-tools
-conda install -c conda-forge esmf=8.7.0=nompi*
+```
+
+`wxvx` environment to use for verification:
+```
+conda create -y -n wxvx -c ufs-community -c paul.madden wxvx -c conda-forge --override-channels
 ```
