@@ -1,12 +1,12 @@
+# This is a basic workflow that is manually triggered
 
-name: Nested Eagle CI Pipeline
+name: Nested Eagle Pipeline
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a job called submit_grids.
   Submit_Grids:
@@ -16,10 +16,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-     - name: Checkout pull request branch
+     - name: Checkout a specific branch
        uses: actions/checkout@v4 
        with:
-        ref: ${{ github.event.pull_request.head.ref }} 
+        ref: main
      - name: Submit Initial Grids
        run: |
          cd nested_eagle/scientific_workflow/data
@@ -126,3 +126,10 @@ jobs:
             done
 
              echo "Slurm job $JOB_ID to perform validation has been completed."
+        
+
+         
+         
+
+    
+          
