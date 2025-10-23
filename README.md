@@ -1,11 +1,26 @@
-# global-eagle
+# Welcome to Eagle 
 
-Go to examples folder to run the full `ufs2arco + Anemoi + wxvx` pipeline, which includes:
-1) Use `ufs2arco` to create training and validation datasets
-2) Use `anemoi-core` modules to train a graph-based model
-3) Use `anemoi-inference` to run inference
-4) Use `wxvx` to verify forecasts
+This repository contains various configurations to run through a machine learning pipeline for weather prediction.
 
-See the examples folder to use 1 year of NOAA Replay Reanalysis data to train a model for 1,000 steps, create a forecast, and verify that forecast.
+Various directories will guide you through an entire ML pipeline.
 
-NOTE: This repository is currently under development.
+1) Data preprocessing using ufs2arco to create training, validation, and test datasets
+2) Model training using anemoi-core modules to train a graph-based model
+3) Creating a forecast with anemoi-inference to run inference from a model checkpoint
+4) Verifying your forecast (or multiple!) with wxvx to verify against gridded analysis or observervations
+
+For more information about each step, please see our documentation: https://global-eagle.readthedocs.io/en/latest/
+
+---------------------
+
+Acknowledgments:
+
+ufs2arco: Tim Smith (NOAA Physical Sciences Laboratory)
+https://github.com/NOAA-PSL/ufs2arco
+
+Anemoi: European Centre for Medium-Range Weather Forecasts
+https://github.com/ecmwf/anemoi-core
+https://github.com/ecmwf/anemoi-inference
+
+wxvx: Paul Madden (NOAA Global Systems Laboratory/Cooperative Institute for Research In Environmental Sciences)
+https://github.com/maddenp-cu/wxvx
