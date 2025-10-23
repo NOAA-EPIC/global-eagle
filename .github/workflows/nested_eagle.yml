@@ -19,7 +19,7 @@ jobs:
      - name: Checkout a specific branch
        uses: actions/checkout@v4 
        with:
-        ref: kb-pipeline
+        ref: main
      - name: Submit Initial Grids
        run: |
          cd nested_eagle/scientific_workflow/data
