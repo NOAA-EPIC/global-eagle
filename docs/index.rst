@@ -4,16 +4,16 @@ Welcome to Eagle!
 
 Insert overview of Eagle
 
-=================
+###################
 Table of Contents
-=================
+###################
 
 .. toctree::
    :maxdepth: 1
-   :caption: Machine Learning Pipeline for Weather Prediction
+   :caption: Full Pipeline
 
-   ufs2arco
-   training
+   data_creation
+   train_a_model
    inference
    verification
 
