@@ -12,10 +12,12 @@
 #SBATCH --qos=gpuwf
 #SBATCH --ntasks-per-node=1
 
-source /scratch3/NCEPDEV/global/Anil.Kumar/miniconda3/bin/activate
+export CHECKPOINT=`ls -d ../training/outputs/checkpoint/*`
+
+sed -i "/^.*checkpoint_path:.*$/c\checkpoint_path: $CHECKPOINT\/inference-last.ckpt" inference.yaml
+
+source /scratch4/NAGAPE/epic/role-epic/miniconda/bin/activate
 conda activate eagle
 module load cuda
-
-export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 
 eagle-tools inference inference.yaml
