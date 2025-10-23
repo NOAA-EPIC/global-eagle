@@ -9,10 +9,14 @@
 #SBATCH --partition=u1-h100
 #SBATCH --gres=gpu:h100:1
 #SBATCH --mem=64g
-#SBATCH --qos=gpu
+#SBATCH --qos=gpuwf
 #SBATCH --ntasks-per-node=1
 
-source /ENTERPATHTOYOURMINICONDAINSCRATCH//miniconda3/bin/activate
+export CHECKPOINT=`ls -d ../training/outputs/checkpoint/*`
+
+sed -i "/^.*checkpoint_path:.*$/c\checkpoint_path: $CHECKPOINT\/inference-last.ckpt" inference.yaml
+
+source /scratch4/NAGAPE/epic/role-epic/miniconda/bin/activate
 conda activate eagle
 module load cuda
 
