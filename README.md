@@ -10,6 +10,8 @@ The key steps to this pipeline include:
 3) Creating a forecast with `anemoi-inference` to run inference from a model checkpoint
 4) Verifying your forecast (or multiple) with `wxvx` to verify against gridded analysis or observervations
 
+Throughout this process you will also use a `eagle-tools` library that provides various utilites for tasks such as executing certain modules or post-processing needs.
+
 For more information about model configurations or the various steps of the pipeline, please see our [documentation](https://global-eagle.readthedocs.io/en/latest/).
 
 ---------------------
@@ -27,3 +29,6 @@ Anemoi: European Centre for Medium-Range Weather Forecasts
 
 wxvx: Paul Madden (NOAA Global Systems Laboratory/Cooperative Institute for Research In Environmental Sciences)
 - [Github](https://github.com/maddenp-cu/wxvx)
+
+eagle-tools: Tim Smith (NOAA Physical Sciences Laboratory)
+- [Github](https://github.com/NOAA-PSL/eagle-tools)
