@@ -21,8 +21,8 @@ Update the dates you wish to include in your dataset by changing the below secti
 These dates will include all data that you plan to use for training, validation, and testing.
 The full dataset will be split into these individual sets later on.
 
-
 .. code-block:: yaml
+
     start: 2022-01-01T06
     end: 2022-12-31T18
     freq: 6h
@@ -30,6 +30,7 @@ The full dataset will be split into these individual sets later on.
 Then ensure that you have updated the statistics_period section to match:
 
 .. code-block:: yaml
+    
     start: 2022-01-01T06
     end: 2022-10-31T18
 
