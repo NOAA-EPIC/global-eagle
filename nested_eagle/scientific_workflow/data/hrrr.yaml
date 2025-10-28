@@ -12,7 +12,7 @@ multisource:
       name: aws_hrrr_archive
       t0:
         start: 2015-02-01T06 # make 2015-02-01T06 for full run
-        end: 2024-01-31T12
+        end: 2024-01-31T18
         freq: 6h
 
       fhr:
@@ -68,7 +68,7 @@ multisource:
       name: aws_hrrr_archive
       t0:
         start: 2015-02-01T00 # make 2015-02-01T00 for full run
-        end: 2024-01-31T12
+        end: 2024-01-31T18
         freq: 6h
 
       fhr:
