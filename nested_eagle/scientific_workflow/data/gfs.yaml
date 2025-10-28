@@ -11,8 +11,8 @@ multisource:
   - source:
       name: gfs_archive # make 2015-02-01T06 for full run
       t0:
-        start: 2022-02-01T06
-        end: 2022-02-07T18
+        start: 2015-02-01T06
+        end: 2024-01-31T18
         freq: 6h
 
       fhr:
@@ -64,8 +64,8 @@ multisource:
   - source:
       name: gfs_archive
       t0:
-        start: 2022-02-01T00 # make 2015-02-01T00 for full run
-        end: 2022-02-07T12
+        start: 2015-02-01T00 # make 2015-02-01T00 for full run
+        end: 2024-01-31T18
         freq: 6h
 
       fhr:
@@ -93,8 +93,8 @@ target:
   sort_channels_by_levels: True
   compute_temporal_residual_statistics: True
   statistics_period:
-    start: 2022-02-01T06 # make 2015-02-01T06 for full run
-    end: 2022-02-05T12
+    start: 2015-02-01T06 # make 2015-02-01T06 for full run
+    end: 2024-01-31T18
   forcings:
     - cos_latitude
     - sin_latitude
